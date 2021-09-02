@@ -8,6 +8,7 @@ _Puedes ingresar desde este link:_
 
 ![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke1.png)
 ![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke2.png)
+![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke5.png)
 ![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke3.png)
 ![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke4.png)
 
