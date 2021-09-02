@@ -1,6 +1,7 @@
 export interface DataStateInterface {
   urlBase: string;
   pokemonAll: DataPokeInterface[] | null;
+  searchWord: string;
 }
 export interface DataPokeAPIInterface {
   name: string;
@@ -17,6 +18,7 @@ function state(): DataStateInterface {
   return {
     urlBase: "https://pokeapi.co/api/v2/pokemon",
     pokemonAll: null,
+    searchWord: "",
   };
 }
 

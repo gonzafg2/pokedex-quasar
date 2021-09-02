@@ -37,6 +37,10 @@ const mutation: MutationTree<DataStateInterface> = {
     poke.fav ? (poke.fav = false) : (poke.fav = true);
     return;
   },
+  setSearch(state: DataStateInterface, payload: string): void {
+    state.searchWord = payload;
+    return;
+  },
 };
 
 export default mutation;
