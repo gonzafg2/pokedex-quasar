@@ -1,10 +1,12 @@
 export interface GeneralStateInterface {
   loading: boolean;
+  pokeActive: boolean;
 }
 
 function state(): GeneralStateInterface {
   return {
-    loading: false
+    loading: false,
+    pokeActive: false,
   }
 };
 

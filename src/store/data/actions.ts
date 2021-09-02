@@ -7,14 +7,14 @@ const actions: ActionTree<DataStateInterface, StateInterface> = {
   async getPokeData({ commit, state }): Promise<void> {
     // Is data locate in localStorage?
     const dataLocal = localStorage.getItem("data");
-    console.log("dataLocal", dataLocal);
-    
+
     if (dataLocal) {
       // Yes, get data from localStorage
       const data = JSON.parse(dataLocal);
       commit("setPokeData", data);
       return;
     }
+    
     const urlBase = state.urlBase;
     try {
       const req = await axios.get(`${urlBase}/?offset=0&limit=1120`);

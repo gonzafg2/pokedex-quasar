@@ -6,21 +6,26 @@ import {
 } from "./state";
 
 const mutation: MutationTree<DataStateInterface> = {
-  setPokeData(
-    state: DataStateInterface,
-    payload: [DataPokeAPIInterface]
-  ): void {
-    if (!payload.length) return;
+  setPokeData(state: DataStateInterface, payload: any): void {
+    if (!payload || !payload.length) return;
+    const data = payload;
 
-    const dataPoke = payload.map((item: DataPokeAPIInterface, i: number) => {
-      return {
-        id: i + 1,
-        name: item.name,
-        url: item.url,
-        fav: false,
-      };
-    });
-    dataPoke ? (state.pokemonAll = dataPoke) : (state.pokemonAll = null);
+    // Exist fav property?
+    const isFavProp = data[0] && data[0].hasOwnProperty("fav");
+
+    if (!isFavProp) {
+      const dataPoke = data.map((item: DataPokeAPIInterface, i: number) => {
+        return {
+          id: i + 1,
+          name: item.name,
+          url: item.url,
+          fav: false,
+        };
+      });
+      dataPoke ? (state.pokemonAll = dataPoke) : (state.pokemonAll = null);
+      return;
+    }
+    state.pokemonAll = data;
     return;
   },
   setToggleFavs(state: DataStateInterface, payload: number): void {
