@@ -1,7 +1,7 @@
 <template>
   <q-page v-if="!loading">
-    <template v-if="pokemonAll && pokemonAll.length">
-      <PokemonList :pokemon="poke" v-for="(poke, i) in pokemonAll" :key="i" />
+    <template v-if="pokeInSearch && pokeInSearch.length">
+      <PokemonList :pokemon="poke" v-for="(poke, i) in pokeInSearch" :key="i" />
     </template>
 
     <template v-else>
@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapGetters, mapMutations } from "vuex";
 import PokemonList from "src/components/list/PokemonList.vue";
 import EmptyList from "src/components/list/EmptyList.vue";
 
@@ -24,7 +24,7 @@ export default defineComponent({
   },
   computed: {
     ...mapState("general", ["loading"]),
-    ...mapState("data", ["pokemonAll"]),
+    ...mapGetters("data", ["pokeInSearch"]),
   },
   methods: {
     ...mapMutations("general", ["changeLoading"]),

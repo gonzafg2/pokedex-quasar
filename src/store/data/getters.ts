@@ -5,8 +5,23 @@ import { DataStateInterface } from "./state";
 const getters: GetterTree<DataStateInterface, StateInterface> = {
   pokeInFav(state) {
     const pokes = state.pokemonAll;
-    const fav = pokes && pokes.filter((poke) => poke.fav);
+    if (!pokes || !pokes.length) return [];
+
+    const searchWord = state.searchWord;
+    const pokeFav = pokes.filter((poke) => poke.fav);
+
+    if (!searchWord) return pokeFav;
+
+    const fav = pokeFav.filter((poke) => poke.name.includes(searchWord));
     return fav;
+  },
+  pokeInSearch(state) {
+    const pokes = state.pokemonAll;
+    if (!pokes || !pokes.length) return [];
+
+    const searchWord = state.searchWord;
+    const search = pokes.filter((poke) => poke.name.includes(searchWord));
+    return search;
   },
 };
 

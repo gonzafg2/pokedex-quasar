@@ -35,6 +35,8 @@ const mutation: MutationTree<DataStateInterface> = {
 
     // If pokemon is in favs, add it, it not, remove it;
     poke.fav ? (poke.fav = false) : (poke.fav = true);
+    // Update data in localStorage:
+    localStorage.setItem("data", JSON.stringify(pokemonAll));
     return;
   },
   setSearch(state: DataStateInterface, payload: string): void {

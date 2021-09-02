@@ -7,6 +7,8 @@ const actions: ActionTree<DataStateInterface, StateInterface> = {
   async getPokeData({ commit, state }): Promise<void> {
     // Is data locate in localStorage?
     const dataLocal = localStorage.getItem("data");
+    console.log("dataLocal", dataLocal);
+    
     if (dataLocal) {
       // Yes, get data from localStorage
       const data = JSON.parse(dataLocal);
