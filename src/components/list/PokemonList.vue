@@ -2,31 +2,24 @@
   <section class="poke-card">
     <p class="poke-card__name">{{ poke.name }}</p>
 
-    <template v-if="poke.fav">
-      <img
-        loading="lazy"
-        width="44"
-        height="44"
-        src="~assets/img/fav.png"
-        alt="Fav icon"
-      />
-    </template>
-
-    <template v-else>
-      <img
-        loading="lazy"
-        width="44"
-        height="44"
-        src="~assets/img/no-fav.png"
-        alt="No fav icon"
-      />
-    </template>
+    <img
+      @click="toggleFav(poke.id)"
+      loading="lazy"
+      width="44"
+      height="44"
+      :src="
+        poke.fav
+          ? require('assets/img/fav.png')
+          : require('assets/img/no-fav.png')
+      "
+      :alt="poke.fav ? 'Favorite icon' : 'No favorite icon'"
+    />
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapActions } from "vuex";
 import { DataStateInterface } from "../../store/data/state";
 
 export default defineComponent({
@@ -40,6 +33,9 @@ export default defineComponent({
     poke() {
       return this.pokemon;
     },
+  },
+  methods: {
+    ...mapActions("data", ["toggleFav"]),
   },
 });
 </script>

@@ -32,6 +32,7 @@ export default defineComponent({
     ...mapMutations("general", ["changeLoading"]),
     getStart() {
       this.changeLoading(true);
+      this.$router.push("/list");
     },
   },
 });

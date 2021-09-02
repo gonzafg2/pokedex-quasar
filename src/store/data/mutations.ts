@@ -1,5 +1,9 @@
 import { MutationTree } from "vuex";
-import { DataStateInterface, DataPokeAPIInterface } from "./state";
+import {
+  DataStateInterface,
+  DataPokeInterface,
+  DataPokeAPIInterface,
+} from "./state";
 
 const mutation: MutationTree<DataStateInterface> = {
   setPokeData(
@@ -17,6 +21,20 @@ const mutation: MutationTree<DataStateInterface> = {
       };
     });
     dataPoke ? (state.pokemonAll = dataPoke) : (state.pokemonAll = null);
+    return;
+  },
+  setToggleFavs(state: DataStateInterface, payload: number): void {
+    const idPoke = payload;
+    const pokemonAll = state.pokemonAll;
+    if (!idPoke || !pokemonAll || !pokemonAll.length) return;
+
+    const poke = pokemonAll.find(
+      (pokemon: DataPokeInterface) => pokemon.id === idPoke
+    );
+    if (!poke) return;
+
+    // If pokemon is in favs, add it, it not, remove it;
+    poke.fav ? (poke.fav = false) : (poke.fav = true);
     return;
   },
 };

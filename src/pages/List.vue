@@ -33,7 +33,9 @@ export default defineComponent({
     },
   },
   mounted() {
-    this.stopLoading();
+    setTimeout(() => {
+      this.stopLoading();
+    }, 1000);
   },
 });
 </script>

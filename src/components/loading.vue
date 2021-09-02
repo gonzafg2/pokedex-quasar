@@ -26,6 +26,7 @@ export default defineComponent({
   right: 0;
   left: 0;
   margin: 0;
+  z-index: 9999;
   &__img {
     width: 106px;
     height: 106px;
