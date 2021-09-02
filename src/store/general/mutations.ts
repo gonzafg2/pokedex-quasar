@@ -1,10 +1,11 @@
-import { MutationTree } from 'vuex';
-import { ExampleStateInterface } from './state';
+import { MutationTree } from "vuex";
+import { GeneralStateInterface } from "./state";
 
-const mutation: MutationTree<ExampleStateInterface> = {
-  someMutation (/* state: ExampleStateInterface */) {
-    // your code
-  }
+const mutation: MutationTree<GeneralStateInterface> = {
+  changeLoading(state: GeneralStateInterface, payload: boolean) {
+    if (payload === undefined || payload === null) return;
+    state.loading = payload;
+  },
 };
 
 export default mutation;

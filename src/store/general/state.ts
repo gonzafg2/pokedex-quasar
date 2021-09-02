@@ -1,10 +1,10 @@
-export interface ExampleStateInterface {
-  prop: boolean;
+export interface GeneralStateInterface {
+  loading: boolean;
 }
 
-function state(): ExampleStateInterface {
+function state(): GeneralStateInterface {
   return {
-    prop: false
+    loading: false
   }
 };
 

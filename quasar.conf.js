@@ -12,7 +12,6 @@ module.exports = configure(function (ctx) {
   return {
     // https://v2.quasar.dev/quasar-cli/supporting-ts
     supportTS: true,
-
     // https://v2.quasar.dev/quasar-cli/prefetch-feature
     // preFetch: true,
 
@@ -41,7 +40,6 @@ module.exports = configure(function (ctx) {
     // Full list of options: https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: "history", // available values: 'hash', 'history'
-
       // transpile: false,
 
       // Add dependencies for transpiling with Babel (Array of string/regex)
@@ -76,8 +74,8 @@ module.exports = configure(function (ctx) {
     framework: {
       config: {},
 
-      iconSet: 'material-icons', // Quasar icon set
-      lang: 'es', // Quasar language pack
+      iconSet: "material-icons", // Quasar icon set
+      lang: "es", // Quasar language pack
 
       // For special cases outside of where the auto-import strategy can have an impact
       // (like functional components as one of the examples),

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="welcome">
+  <q-page v-if="!loading" class="welcome">
     <q-img
       src="~assets/img/pikachu-welcome.png"
       spinner-color="white"
@@ -10,18 +10,29 @@
       The digital encyclopedia created by Professor Oak is an invaluable tool to
       Trainers in the Pokémon world.
     </p>
-    <q-btn class="welcome__cta" text-color="white" label="Get started" />
+    <q-btn
+      @click="getStart"
+      class="welcome__cta"
+      text-color="white"
+      label="Get started"
+    />
   </q-page>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { mapState, mapMutations } from "vuex";
 
 export default defineComponent({
   name: "PageIndex",
-  components: {},
-  data() {
-    return {};
+  computed: {
+    ...mapState("general", ["loading"]),
+  },
+  methods: {
+    ...mapMutations("general", ["changeLoading"]),
+    getStart() {
+      this.changeLoading(true);
+    },
   },
 });
 </script>
