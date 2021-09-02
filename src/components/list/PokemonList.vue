@@ -1,6 +1,26 @@
-<template>
+<template v-if="poke">
   <section class="poke-card">
     <p class="poke-card__name">{{ poke.name }}</p>
+
+    <template v-if="poke.fav">
+      <img
+        loading="lazy"
+        width="44"
+        height="44"
+        src="~assets/img/fav.png"
+        alt="Fav icon"
+      />
+    </template>
+
+    <template v-else>
+      <img
+        loading="lazy"
+        width="44"
+        height="44"
+        src="~assets/img/no-fav.png"
+        alt="No fav icon"
+      />
+    </template>
   </section>
 </template>
 

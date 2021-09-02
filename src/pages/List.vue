@@ -1,6 +1,12 @@
 <template>
-  <q-page v-if="!loading" class="list">
-    <PokemonList :pokemon="poke" v-for="(poke, i) in pokemonAll" :key="i" />
+  <q-page v-if="!loading">
+    <template v-if="pokemonAll && pokemonAll.length">
+      <PokemonList :pokemon="poke" v-for="(poke, i) in pokemonAll" :key="i" />
+    </template>
+
+    <template v-else>
+      <EmptyList />
+    </template>
   </q-page>
 </template>
 
@@ -8,10 +14,12 @@
 import { defineComponent } from "vue";
 import { mapState, mapMutations } from "vuex";
 import PokemonList from "src/components/list/PokemonList.vue";
+import EmptyList from "src/components/list/EmptyList.vue";
 
 export default defineComponent({
   name: "List",
   components: {
+    EmptyList,
     PokemonList,
   },
   computed: {
@@ -29,9 +37,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-// .list {
-//   background-color: #f9f9f9;
-// }
-</style>

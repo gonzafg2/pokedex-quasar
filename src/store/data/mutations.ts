@@ -16,8 +16,6 @@ const mutation: MutationTree<DataStateInterface> = {
         fav: false,
       };
     });
-    console.log(dataPoke);
-
     dataPoke ? (state.pokemonAll = dataPoke) : (state.pokemonAll = null);
     return;
   },
