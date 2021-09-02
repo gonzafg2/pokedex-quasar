@@ -4,7 +4,7 @@
       :to="{ path: '/list' }"
       :class="{ active: url === 'list' }"
       class="footer__cta"
-      push
+      flat
     >
       <img
         loading="lazy"
@@ -19,7 +19,7 @@
       :to="{ path: '/list/favorites' }"
       :class="{ active: url === 'list/favorites' }"
       class="footer__cta"
-      push
+      flat
     >
       <img
         loading="lazy"
@@ -81,6 +81,17 @@ export default defineComponent({
 @media screen and (min-width: 375px) {
   .footer {
     padding: 0 30px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .footer {
+    justify-content: center;
+    &__cta {
+      width: 275px;
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
   }
 }
 </style>

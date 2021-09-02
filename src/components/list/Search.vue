@@ -52,6 +52,12 @@ input::placeholder {
   line-height: 140%;
   color: #bfbfbf;
 }
+@media screen and (min-width: 767px) {
+  .search-list {
+    max-width: 570px;
+    margin: 0 auto 40px;
+  }
+}
 </style>
 
 <style lang="scss">

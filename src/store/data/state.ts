@@ -2,6 +2,7 @@ export interface DataStateInterface {
   urlBase: string;
   pokemonAll: DataPokeInterface[] | null;
   searchWord: string;
+  pokeDataId: DataPokeIdInterface | null;
 }
 export interface DataPokeAPIInterface {
   name: string;
@@ -13,12 +14,21 @@ export interface DataPokeInterface {
   url: string;
   fav: boolean;
 }
+export interface DataPokeIdInterface {
+  id: number;
+  name: string;
+  img: string;
+  weight: number;
+  height: number;
+  types: string[];
+}
 
 function state(): DataStateInterface {
   return {
     urlBase: "https://pokeapi.co/api/v2/pokemon",
     pokemonAll: null,
     searchWord: "",
+    pokeDataId: null,
   };
 }
 

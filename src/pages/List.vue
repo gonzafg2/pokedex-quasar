@@ -1,12 +1,7 @@
 <template>
   <q-page v-if="!loading">
     <template v-if="pokeInSearch && pokeInSearch.length">
-      <PokemonList
-        @click="changePokeActive(true)"
-        :pokemon="poke"
-        v-for="(poke, i) in pokeInSearch"
-        :key="i"
-      />
+      <PokemonList :pokemon="poke" v-for="(poke, i) in pokeInSearch" :key="i" />
     </template>
 
     <template v-else>
@@ -32,7 +27,7 @@ export default defineComponent({
     ...mapGetters("data", ["pokeInSearch"]),
   },
   methods: {
-    ...mapMutations("general", ["changeLoading", "changePokeActive"]),
+    ...mapMutations("general", ["changeLoading"]),
     stopLoading() {
       this.changeLoading(false);
     },

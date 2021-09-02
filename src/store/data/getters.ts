@@ -23,6 +23,17 @@ const getters: GetterTree<DataStateInterface, StateInterface> = {
     const search = pokes.filter((poke) => poke.name.includes(searchWord));
     return search;
   },
+  pokeIsInFav(state) {
+    return (id: number): boolean => {
+      const pokes = state.pokemonAll;
+      if (!pokes || !pokes.length) return false;
+
+      const poke = pokes.find((poke) => poke.id === id);
+      if (!poke) return false;
+
+      return poke.fav;
+    };
+  },
 };
 
 export default getters;

@@ -3,6 +3,7 @@ import {
   DataStateInterface,
   DataPokeInterface,
   DataPokeAPIInterface,
+  DataPokeIdInterface,
 } from "./state";
 
 const mutation: MutationTree<DataStateInterface> = {
@@ -46,6 +47,16 @@ const mutation: MutationTree<DataStateInterface> = {
   },
   setSearch(state: DataStateInterface, payload: string): void {
     state.searchWord = payload;
+    return;
+  },
+  setPokeDataById(
+    state: DataStateInterface,
+    payload: DataPokeIdInterface
+  ): void {
+    const pokeData = payload;
+    if (!pokeData) return;
+
+    state.pokeDataId = pokeData;
     return;
   },
 };

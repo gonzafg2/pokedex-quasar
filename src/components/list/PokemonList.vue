@@ -1,6 +1,8 @@
 <template v-if="poke">
   <section class="poke-card">
-    <p class="poke-card__name">{{ poke.name }}</p>
+    <p @click="openDialog(poke.id)" class="poke-card__name">
+      {{ poke.name }}
+    </p>
 
     <img
       @click="toggleFav(poke.id)"
@@ -19,7 +21,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { mapActions } from "vuex";
+import { mapMutations, mapActions } from "vuex";
 import { DataStateInterface } from "../../store/data/state";
 
 export default defineComponent({
@@ -35,7 +37,14 @@ export default defineComponent({
     },
   },
   methods: {
-    ...mapActions("data", ["toggleFav"]),
+    ...mapActions("data", ["toggleFav", "getPokeDataById"]),
+    ...mapMutations("general", ["changePokeActive"]),
+    async openDialog(id: number): Promise<void> {
+      const idPoke = id;
+      if (!idPoke) return;
+      await this.getPokeDataById(idPoke);
+      this.changePokeActive(true);
+    },
   },
 });
 </script>
@@ -58,6 +67,12 @@ export default defineComponent({
     font-size: 22px;
     line-height: 26px;
     color: #353535;
+  }
+}
+@media screen and (min-width: 767px) {
+  .poke-card {
+    max-width: 570px;
+    margin: 0 auto 10px;
   }
 }
 </style>
