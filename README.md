@@ -6,15 +6,19 @@ _Puedes ingresar desde este link:_
 
 [https://pokequasar-1126a.web.app/](https://pokequasar-1126a.web.app/)
 
-![](https://raw.githubusercontent.com/gonzafg2/ColorsApp/master/colorsapp.png)
-_Al hacer clic en un color se ve lo siguiente:_
-![](https://raw.githubusercontent.com/gonzafg2/ColorsApp/master/colorsapp2.png)
+![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke1.png)
 
-_La paleta de colores es obtenida a través de una API de prueba._
+![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke2.png)
+
+![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke3.png)
+
+![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke4.png)
+
+_La data de los pokemones es obtenida a través de la siguiente API._
 
 <!-- ``` -->
 
-[https://reqres.in/api/colors](https://reqres.in/api/colors)
+[https://pokeapi.co/](https://pokeapi.co/)
 
 <!-- ``` -->
 
@@ -59,30 +63,43 @@ $ npm install -g @vue/cli
 $ npm install -g @vue/cli-service-global
 ```
 
+**_Quasar Framework y Quasar CLI_**
+
+[https://quasar.dev/](https://quasar.dev/)
+
+```
+$ npm install -g @quasar/cli
+```
+
 ### Instalación 🔧
 
-_Antes de realizar la instalación verifica que tengas instalado correctamente Node JS, npm y Vue, de la siguiente forma:_
+_Antes de realizar la instalación verifica que tengas instalado correctamente Node JS, npm, Vue y Quasar de la siguiente forma:_
 
 ```
 $node --version
-@vue/cli 4.3.1 (Esto debería verse como resultado)
+v14.17.4 (Esto debería verse como resultado)
 ```
 
 ```
 $npm --version
-6.14.5 (Esto debería verse como resultado)
+7.20.3 (Esto debería verse como resultado)
 ```
 
 ```
 $vue --version
-@vue/cli 4.3.1 (Esto debería verse como resultado)
+@vue/cli 4.5.13 (Esto debería verse como resultado)
+```
+
+```
+$quasar --version
+3.1.0 (Esto debería verse como resultado)
 ```
 
 _Para instalar el proyecto debes descargarlo como zip o clonarlo desde esta dirección:_
 
 <!-- ``` -->
 
-[https://github.com/gonzafg2/ColorsApp.git](https://github.com/gonzafg2/ColorsApp.git)
+[https://github.com/gonzafg2/pokeapi-global66.git](https://github.com/gonzafg2/pokeapi-global66.git)
 
 <!-- ``` -->
 
@@ -99,7 +116,7 @@ _Luego de esto, se creará una carpeta llamada "node_modules"._
 _Si todo salió correctamente puedes ver la app ejecutando el siguiente comando:_
 
 ```
-$ npm run serve
+$ quasar dev
 ```
 
 _Esto creará un servidor local para visualizar el proyecto al cual puedes acceder ingresando a alguna de estas direcciones:_ (Pueden ser diferentes en tu equipo)
@@ -120,7 +137,7 @@ DONE  Compiled successfully in 9051ms
 _Puedes hacer deploy ejecutando el siguiente comando en tu terminal:_
 
 ```
-$ npm run build
+$ quasar build
 ```
 
 _Lo que dará como resultado la creación de una carpeta llamada "dist", con los archivos necesarios y minificados para la ejecución en producción._
@@ -150,11 +167,11 @@ _En este proyecto se han utilizado las siguientes tecnologías:_
 - [VueJS](https://vuejs.org/) - El framework web escrito en javascript más versátil, simple y amigable de usar.
 - [Vue-CLI](https://cli.vuejs.org/) - Herramienta para complementar Vue JS.
 - [Vue-Router](https://router.vuejs.org/) - Herramienta para complementar Vue JS.
-- [Bootstrap-Vue](https://bootstrap-vue.org/) - Framework para CSS adaptado a las etiquetas de Vue JS.
+- [Quasar Framework](https://quasar.dev/) - Framework para CSS adaptado a las etiquetas de Vue JS.
 - [NodeJS y npm](https://nodejs.org/) - Manejador de dependencias.
 - [Axios](https://github.com/axios/axios) - Utilizado para realizar llamadas a una API de forma sencilla, basado en promesas.
-- [Vue Clipboard](https://www.npmjs.com/package/vue-clipboards) - Usado para realizar el copiado de un elemento al ser clickeado.
-- [Heroku](https://www.heroku.com) - Usado para hacer deploy y como hosting de la aplicación.
+- [Quasar Clipboard](https://quasar.dev/quasar-utils/other-utils#copy-to-clipboard) - Usado para realizar el copiado de un elemento al ser clickeado.
+- [Firebase Hosting](https://console.firebase.com) - Usado para hacer deploy y como hosting de la aplicación.
 
 <!-- ## Contribuyendo 🖇️
 
