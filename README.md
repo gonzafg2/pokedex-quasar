@@ -7,11 +7,8 @@ _Puedes ingresar desde este link:_
 [https://pokequasar-1126a.web.app/](https://pokequasar-1126a.web.app/)
 
 ![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke1.png)
-
 ![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke2.png)
-
 ![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke3.png)
-
 ![](https://raw.githubusercontent.com/gonzafg2/pokeapi-global66/master/src/assets/img/poke4.png)
 
 _La data de los pokemones es obtenida a través de la siguiente API._
