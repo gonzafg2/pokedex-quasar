@@ -6,7 +6,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Loading from "src/components/loading.vue";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default defineComponent({
   name: "App",
@@ -16,11 +16,17 @@ export default defineComponent({
   computed: {
     ...mapState("general", ["loading"]),
   },
+  methods: {
+    ...mapActions("data", ["getPokeData"]),
+  },
+  created () {
+    this.getPokeData();
+  },
 });
 </script>
 
 <style lang="scss">
 body {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
 }
 </style>

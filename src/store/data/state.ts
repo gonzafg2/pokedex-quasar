@@ -1,11 +1,23 @@
 export interface DataStateInterface {
-  prop: boolean;
+  urlBase: string;
+  pokemonAll: DataPokeInterface[] | null;
+}
+export interface DataPokeAPIInterface {
+  name: string;
+  url: string;
+}
+export interface DataPokeInterface {
+  id: number;
+  name: string;
+  url: string;
+  fav: boolean;
 }
 
 function state(): DataStateInterface {
   return {
-    prop: false
-  }
-};
+    urlBase: "https://pokeapi.co/api/v2/pokemon",
+    pokemonAll: null,
+  };
+}
 
 export default state;
