@@ -193,7 +193,7 @@ También puedes mirar la lista de todos los [contribuyentes](https://github.com/
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](https://github.com/gonzafg2/ColorsApp/blob/master/LICENSE) para detalles
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](https://github.com/gonzafg2/pokedex-quasar/blob/master/LICENSE) para detalles
 
 ## Expresiones de Gratitud 🎁
 
